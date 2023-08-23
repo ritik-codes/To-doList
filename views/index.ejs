@@ -1,0 +1,20 @@
+<%- include("partials/header.ejs") %>
+
+  <div class="main">
+    <form class="form" method="post" action="/">
+      <input type="text" name="text" id="text" placeholder="New Task" required autocomplete="off"> <!--name= text is imp because it used to hold variable and display it-->
+      <button class="button-63" role="button">+</button>
+
+      <ul>
+      <% for(todo of todos){ %>
+          <li class="todo">
+              <input type="checkbox" id="checkbox">
+              <label for="checkbox"><%= todo.text %></label>
+          </li>
+      <% } %>
+      </ul>
+
+    </form>
+  </div>
+
+<%- include("partials/footer.ejs") %>
